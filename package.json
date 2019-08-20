@@ -2,14 +2,15 @@
   "name": "easy-commander",
   "version": "0.0.1",
   "description": "This is a framework that allows you to create clis quickly and easily, based on commander.",
-  "main": "./lib/index.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "rimraf ./lib && npx tsc",
     "lint": "npx tslint --fix --project .",
     "test": "mocha -r ts-node/register test/**/*.test.ts --exit",
     "prepublishOnly": "npm run build",
-    "ep:cli": "ts-node ./example/cli"
+    "ep:ls": "ts-node ./example/cli ls",
+    "ep:ls-u": "ts-node ./example/cli ls -u"
   },
   "repository": {
     "type": "git",
