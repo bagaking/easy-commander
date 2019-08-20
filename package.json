@@ -1,6 +1,6 @@
 {
   "name": "easy-commander",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This is a framework that allows you to create clis quickly and easily, based on commander.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
