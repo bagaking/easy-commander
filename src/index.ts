@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import * as commander from "commander";
+import {Command} from "commander";
 
 export interface IArg {
     alias?: string;
@@ -38,6 +39,11 @@ export class CmdMaker {
                 cmd.option(`${arg.alias ? "-" + arg.alias + "," : ""} --${argName} ${arg.input ? "<" + argName + ">" : ""}`, arg.desc);
             }
         }
+        return this;
+    }
+
+    custom(cb: (cmd : Command) => void): this {
+        cb(this.commander);
         return this;
     }
 
