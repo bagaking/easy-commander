@@ -25,5 +25,8 @@ const lsBlob: ICmd = {
 
 cmdMaker
     .append({ls: lsBlob})
-    .start({version: "alpha"});
+    .start({
+        version: "alpha",
+        cbFallback: () => console.log("fallback")
+    });
 
