@@ -19,6 +19,13 @@ easy-commander is a framework that allows you to create clis quickly and easily,
     3. both
 4. Finally, call cmdMaker.start()
 
+## Advanced Usages
+
+- get commander
+    `cmdMaker.commander`
+- to apply custom setting of command
+    `cmdMaker.custom(cmd => { ... })`
+
 ## Usage Examples
 
 - [basic usage](./example/cli.ts)

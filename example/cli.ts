@@ -25,5 +25,5 @@ const lsBlob: ICmd = {
 
 cmdMaker
     .append({ls: lsBlob})
-    .start();
+    .start({version: "alpha"});
 
