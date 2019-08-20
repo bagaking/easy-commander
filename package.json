@@ -1,0 +1,40 @@
+{
+  "name": "easy-commander",
+  "version": "0.0.1",
+  "description": "This is a framework that allows you to create clis quickly and easily, based on commander.",
+  "main": "./lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "rimraf ./lib && npx tsc",
+    "lint": "npx tslint --fix --project .",
+    "test": "mocha -r ts-node/register test/**/*.test.ts --exit",
+    "prepublishOnly": "npm run build",
+    "ep:cli": "ts-node ./example/cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bagaking/easy-commander.git"
+  },
+  "keywords": [
+    "commander",
+    "cli"
+  ],
+  "author": "bagaking <kinghand@foxmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bagaking/easy-commander/issues"
+  },
+  "homepage": "https://github.com/bagaking/easy-commander#readme",
+  "devDependencies": {
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.15.0",
+    "typescript": "^3.4.2"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "commander": "^3.0.0"
+  }
+}
