@@ -22,7 +22,6 @@ export class CmdMaker {
     version = process.env.npm_package_version || "0.0.1";
 
     constructor(){
-        commander.version(this.version);
     }
 
     get commander(){
@@ -47,7 +46,8 @@ export class CmdMaker {
         return this;
     }
 
-    start() {
+    start(options?: {version?: string}) {
+        commander.version(options && options.version || `powered by easy-commander<${process.env.npm_package_version || "0.0.1"}>`);
         commander.parse(process.argv);
     }
 }
