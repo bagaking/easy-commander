@@ -22,9 +22,20 @@ easy-commander is a framework that allows you to create clis quickly and easily,
 ## Advanced Usages
 
 - get commander
+
     `cmdMaker.commander`
+
 - to apply custom setting of command
+
     `cmdMaker.custom(cmd => { ... })`
+
+- set version when start
+
+    `cmdMaker.start({ version: "0.1.0", ... })`
+
+- set fallback method when start
+
+    `cmdMaker.start({ cbFallback: ()=> { /** do sth. */ }, ... })`
 
 ## Usage Examples
 
