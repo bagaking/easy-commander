@@ -21,10 +21,10 @@ export class CmdMaker {
 
     version = process.env.npm_package_version || "0.0.1";
 
-    constructor(){
+    constructor() {
     }
 
-    get commander(){
+    get commander() {
         return commander;
     }
 
@@ -41,14 +41,21 @@ export class CmdMaker {
         return this;
     }
 
-    custom(cb: (cmd : Command) => void): this {
+    custom(cb: (cmd: Command) => void): this {
         cb(this.commander);
         return this;
     }
 
-    start(options?: {version?: string}) {
+    start(
+        options?: {
+            version?: string
+            cbFallback?: () => void
+        }) {
         commander.version(options && options.version || `powered by easy-commander<${process.env.npm_package_version || "0.0.1"}>`);
         commander.parse(process.argv);
+        if (commander.args.length < 1 && options.cbFallback) {
+            options.cbFallback();
+        }
     }
 }
 
